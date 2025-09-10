@@ -11,20 +11,44 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Heading": {
+    "title": {
       "type": "string",
       "minLength": 10,
       "maxLength": 250,
-      "required": true
-    },
-    "Description": {
-      "type": "text",
       "required": true
     },
     "Seo": {
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "author": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "json"
     }
   }
 }

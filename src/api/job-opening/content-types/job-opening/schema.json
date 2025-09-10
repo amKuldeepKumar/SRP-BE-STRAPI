@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_openings",
+  "info": {
+    "singularName": "job-opening",
+    "pluralName": "job-openings",
+    "displayName": "Job-Opening"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "default": "Mohali, Punjab (On-site)",
+      "required": true
+    },
+    "experience": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "blocks"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "responsibilities": {
+      "type": "richtext"
+    },
+    "requirements": {
+      "type": "richtext"
+    },
+    "isOpen": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  }
+}
