@@ -607,10 +607,6 @@ export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
     isOpen: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
-    job_application: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::job-application.job-application'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
