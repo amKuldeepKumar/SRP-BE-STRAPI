@@ -546,10 +546,8 @@ export interface ApiJobApplicationJobApplication
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    job_opening: Schema.Attribute.Relation<
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    job_id: Schema.Attribute.Relation<
       'oneToOne',
       'api::job-opening.job-opening'
     >;
@@ -562,8 +560,8 @@ export interface ApiJobApplicationJobApplication
     mobile: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
-          max: 10;
-          min: 10;
+          max: 9999999999;
+          min: 9999999999;
         },
         number
       >;
@@ -609,6 +607,10 @@ export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
     isOpen: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
+    job_application: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::job-application.job-application'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

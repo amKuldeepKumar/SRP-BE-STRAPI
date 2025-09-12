@@ -18,17 +18,18 @@
     "email": {
       "type": "email",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "mobile": {
       "type": "integer",
-      "min": 10,
-      "max": 10
+      "min": 9999999999,
+      "max": 9999999999
     },
-    "job_opening": {
+    "job_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::job-opening.job-opening"
+      "target": "api::job-opening.job-opening",
+      "inversedBy": "job_application"
     },
     "night_shift_friendly": {
       "type": "boolean",
