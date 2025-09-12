@@ -34,6 +34,19 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "total_experience": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0,
+      "max": 40
+    },
+    "why_you": {
+      "type": "text"
+    },
+    "previous_employer": {
+      "type": "string"
     }
   }
 }

@@ -571,10 +571,22 @@ export interface ApiJobApplicationJobApplication
     night_shift_friendly: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
+    previous_employer: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    total_experience: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 40;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    why_you: Schema.Attribute.Text;
   };
 }
 
