@@ -607,7 +607,7 @@ export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
     requirements: Schema.Attribute.RichText;
     responsibilities: Schema.Attribute.RichText;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    tags: Schema.Attribute.Blocks;
+    tags: Schema.Attribute.JSON;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

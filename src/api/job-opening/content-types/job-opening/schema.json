@@ -28,9 +28,6 @@
     "experience": {
       "type": "string"
     },
-    "tags": {
-      "type": "blocks"
-    },
     "description": {
       "type": "richtext"
     },
@@ -44,6 +41,10 @@
       "type": "boolean",
       "required": true,
       "default": true
+    },
+    "tags": {
+      "type": "json",
+      "required": false
     }
   }
 }
