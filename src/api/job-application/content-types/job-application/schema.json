@@ -28,8 +28,7 @@
     "job_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::job-opening.job-opening",
-      "inversedBy": "job_application"
+      "target": "api::job-opening.job-opening"
     },
     "night_shift_friendly": {
       "type": "boolean",

@@ -45,12 +45,6 @@
     "tags": {
       "type": "json",
       "required": false
-    },
-    "job_application": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::job-application.job-application",
-      "mappedBy": "job_id"
     }
   }
 }
