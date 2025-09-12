@@ -568,6 +568,9 @@ export interface ApiJobApplicationJobApplication
         number
       >;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    night_shift_friendly: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

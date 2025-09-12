@@ -29,6 +29,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::job-opening.job-opening"
+    },
+    "night_shift_friendly": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   }
 }
