@@ -45,6 +45,12 @@
     "tags": {
       "type": "json",
       "required": false
+    },
+    "job_applications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::job-application.job-application",
+      "mappedBy": "job_ids"
     }
   }
 }

@@ -49,6 +49,20 @@
     },
     "tags": {
       "type": "json"
+    },
+    "isMain": {
+      "type": "boolean",
+      "default": false
+    },
+    "video": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
