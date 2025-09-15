@@ -50,10 +50,6 @@
     "tags": {
       "type": "json"
     },
-    "isMain": {
-      "type": "boolean",
-      "default": false
-    },
     "video": {
       "type": "media",
       "multiple": true,
@@ -63,6 +59,10 @@
         "videos",
         "audios"
       ]
+    },
+    "is_main": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
