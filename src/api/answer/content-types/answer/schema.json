@@ -12,19 +12,13 @@
   "pluginOptions": {},
   "attributes": {
     "answer": {
-      "type": "text"
-    },
-    "question": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::question.question",
-      "inversedBy": "answers"
+      "type": "json"
     },
     "job_application": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToOne",
       "target": "api::job-application.job-application",
-      "inversedBy": "answers"
+      "inversedBy": "answer"
     }
   }
 }

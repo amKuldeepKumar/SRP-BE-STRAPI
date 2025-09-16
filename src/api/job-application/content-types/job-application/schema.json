@@ -11,47 +11,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "email",
-      "required": true,
-      "unique": false
-    },
-    "mobile": {
-      "type": "integer",
-      "min": 9999999999,
-      "max": 9999999999
-    },
     "job_ids": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::job-opening.job-opening",
       "inversedBy": "job_applications"
     },
-    "night_shift_friendly": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
-    "total_experience": {
-      "type": "integer",
-      "required": true,
-      "default": 0,
-      "min": 0,
-      "max": 40
-    },
-    "why_you": {
-      "type": "text"
-    },
-    "previous_employer": {
-      "type": "string"
-    },
-    "answers": {
+    "answer": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::answer.answer",
       "mappedBy": "job_application"
     }

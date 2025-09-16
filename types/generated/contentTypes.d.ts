@@ -411,14 +411,10 @@ export interface ApiAnswerAnswer extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    answer: Schema.Attribute.Text;
+    answer: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    job_application: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::job-application.job-application'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -426,7 +422,6 @@ export interface ApiAnswerAnswer extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    question: Schema.Attribute.Relation<'manyToOne', 'api::question.question'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -581,11 +576,9 @@ export interface ApiJobApplicationJobApplication
     draftAndPublish: true;
   };
   attributes: {
-    answers: Schema.Attribute.Relation<'oneToMany', 'api::answer.answer'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email & Schema.Attribute.Required;
     job_ids: Schema.Attribute.Relation<
       'manyToMany',
       'api::job-opening.job-opening'
@@ -596,34 +589,10 @@ export interface ApiJobApplicationJobApplication
       'api::job-application.job-application'
     > &
       Schema.Attribute.Private;
-    mobile: Schema.Attribute.Integer &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 9999999999;
-          min: 9999999999;
-        },
-        number
-      >;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    night_shift_friendly: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
-    previous_employer: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    total_experience: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 40;
-          min: 0;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<0>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    why_you: Schema.Attribute.Text;
   };
 }
 
@@ -682,7 +651,6 @@ export interface ApiQuestionQuestion extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    answers: Schema.Attribute.Relation<'oneToMany', 'api::answer.answer'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
