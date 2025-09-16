@@ -20,8 +20,7 @@
     "answer": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::answer.answer",
-      "mappedBy": "job_application"
+      "target": "api::answer.answer"
     }
   }
 }
