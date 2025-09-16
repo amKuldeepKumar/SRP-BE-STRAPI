@@ -576,7 +576,7 @@ export interface ApiJobApplicationJobApplication
     draftAndPublish: true;
   };
   attributes: {
-    answer: Schema.Attribute.Relation<'oneToOne', 'api::answer.answer'>;
+    answer_id: Schema.Attribute.Relation<'oneToOne', 'api::answer.answer'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

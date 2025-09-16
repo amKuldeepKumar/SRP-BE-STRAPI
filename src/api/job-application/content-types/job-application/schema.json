@@ -17,7 +17,7 @@
       "target": "api::job-opening.job-opening",
       "inversedBy": "job_applications"
     },
-    "answer": {
+    "answer_id": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::answer.answer"
