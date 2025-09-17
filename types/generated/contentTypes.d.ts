@@ -381,7 +381,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     singularName: 'about-us';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -408,7 +408,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     singularName: 'blog';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     author: Schema.Attribute.String;
@@ -453,7 +453,7 @@ export interface ApiCareerCultureCareerCulture
     singularName: 'career-culture';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     content: Schema.Attribute.RichText;
@@ -482,7 +482,7 @@ export interface ApiCareersBenefitCareersBenefit
     singularName: 'careers-benefit';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     content: Schema.Attribute.RichText;
@@ -510,7 +510,7 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
     singularName: 'contact-us';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -537,7 +537,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     singularName: 'event';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     body: Schema.Attribute.RichText & Schema.Attribute.Required;
@@ -574,7 +574,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     singularName: 'home-page';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -603,7 +603,7 @@ export interface ApiJobApplicationJobApplication
     singularName: 'job-application';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     answers: Schema.Attribute.JSON;
@@ -636,7 +636,7 @@ export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
     singularName: 'job-opening';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -680,7 +680,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     singularName: 'post';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     author: Schema.Attribute.Enumeration<
@@ -714,7 +714,7 @@ export interface ApiQuestionQuestion extends Struct.CollectionTypeSchema {
     singularName: 'question';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -747,7 +747,7 @@ export interface ApiSupplierSupplier extends Struct.CollectionTypeSchema {
     singularName: 'supplier';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     company_name: Schema.Attribute.String & Schema.Attribute.Required;
