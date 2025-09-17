@@ -444,6 +444,64 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCareerCultureCareerCulture
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'career_cultures';
+  info: {
+    displayName: 'Career_Culture';
+    pluralName: 'career-cultures';
+    singularName: 'career-culture';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-culture.career-culture'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCareersBenefitCareersBenefit
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'careers_benefits';
+  info: {
+    displayName: 'Careers_Benefit';
+    pluralName: 'careers-benefits';
+    singularName: 'careers-benefit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::careers-benefit.careers-benefit'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   collectionName: 'contact_uses';
   info: {
@@ -614,6 +672,40 @@ export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPostPost extends Struct.CollectionTypeSchema {
+  collectionName: 'posts';
+  info: {
+    displayName: 'Post';
+    pluralName: 'posts';
+    singularName: 'post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Enumeration<
+      ['SRP Editorial', 'People Ops', 'Media Team']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::post.post'> &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiQuestionQuestion extends Struct.CollectionTypeSchema {
   collectionName: 'questions';
   info: {
@@ -644,6 +736,37 @@ export interface ApiQuestionQuestion extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSupplierSupplier extends Struct.CollectionTypeSchema {
+  collectionName: 'suppliers';
+  info: {
+    displayName: 'Supplier';
+    pluralName: 'suppliers';
+    singularName: 'supplier';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company_name: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::supplier.supplier'
+    > &
+      Schema.Attribute.Private;
+    offering: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    website: Schema.Attribute.String;
   };
 }
 
@@ -1158,12 +1281,16 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::blog.blog': ApiBlogBlog;
+      'api::career-culture.career-culture': ApiCareerCultureCareerCulture;
+      'api::careers-benefit.careers-benefit': ApiCareersBenefitCareersBenefit;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::event.event': ApiEventEvent;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::job-application.job-application': ApiJobApplicationJobApplication;
       'api::job-opening.job-opening': ApiJobOpeningJobOpening;
+      'api::post.post': ApiPostPost;
       'api::question.question': ApiQuestionQuestion;
+      'api::supplier.supplier': ApiSupplierSupplier;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

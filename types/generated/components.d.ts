@@ -46,7 +46,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
         maxLength: 60;
       }>;
     metaViewport: Schema.Attribute.String;
-    openGraph: Schema.Attribute.Component<'shared.open-graph', false>;
     structuredData: Schema.Attribute.JSON;
   };
 }

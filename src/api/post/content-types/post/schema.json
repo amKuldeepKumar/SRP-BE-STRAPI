@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "author": {
+      "type": "enumeration",
+      "enum": [
+        "SRP Editorial",
+        "People Ops",
+        "Media Team"
+      ]
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
