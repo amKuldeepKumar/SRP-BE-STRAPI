@@ -7,7 +7,7 @@
     "displayName": "Careers_Benefit"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {

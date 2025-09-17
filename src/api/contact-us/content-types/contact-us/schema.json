@@ -7,7 +7,7 @@
     "displayName": "Contact-Us"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {}

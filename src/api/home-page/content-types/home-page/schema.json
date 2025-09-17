@@ -7,7 +7,7 @@
     "displayName": "Home-Page"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
