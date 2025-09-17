@@ -17,10 +17,12 @@
       "target": "api::job-opening.job-opening",
       "inversedBy": "job_applications"
     },
-    "answer_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::answer.answer"
+    "answers": {
+      "type": "json"
+    },
+    "name": {
+      "type": "string",
+      "required": true
     }
   }
 }

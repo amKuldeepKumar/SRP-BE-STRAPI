@@ -400,34 +400,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiAnswerAnswer extends Struct.CollectionTypeSchema {
-  collectionName: 'answers';
-  info: {
-    displayName: 'Answer';
-    pluralName: 'answers';
-    singularName: 'answer';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    answer: Schema.Attribute.JSON;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::answer.answer'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
@@ -576,7 +548,7 @@ export interface ApiJobApplicationJobApplication
     draftAndPublish: true;
   };
   attributes: {
-    answer_id: Schema.Attribute.Relation<'oneToOne', 'api::answer.answer'>;
+    answers: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -590,6 +562,7 @@ export interface ApiJobApplicationJobApplication
       'api::job-application.job-application'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1184,7 +1157,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
-      'api::answer.answer': ApiAnswerAnswer;
       'api::blog.blog': ApiBlogBlog;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::event.event': ApiEventEvent;
